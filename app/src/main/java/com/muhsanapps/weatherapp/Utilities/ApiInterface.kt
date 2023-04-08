@@ -1,6 +1,6 @@
 package com.muhsanapps.weatherapp.Utilities
 
-import com.muhsanapps.weatherapp.Pojo.ModelClass
+import com.muhsanapps.weatherapp.Models.ModelClass
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

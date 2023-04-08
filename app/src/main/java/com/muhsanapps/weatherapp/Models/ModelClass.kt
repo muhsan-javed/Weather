@@ -1,4 +1,4 @@
-package com.muhsanapps.weatherapp.Pojo
+package com.muhsanapps.weatherapp.Models
 
 import com.google.gson.annotations.SerializedName
 

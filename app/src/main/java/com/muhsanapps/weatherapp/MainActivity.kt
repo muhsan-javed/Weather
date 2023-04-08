@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.muhsanapps.weatherapp.Pojo.ModelClass
+import com.muhsanapps.weatherapp.Models.ModelClass
 import com.muhsanapps.weatherapp.Utilities.ApiUtilities
 import com.muhsanapps.weatherapp.databinding.ActivityMainBinding
 import retrofit2.Call
@@ -34,6 +34,8 @@ import java.util.*
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
+
+    // API  CALL URL ::: https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=4e2d2d137d34778b5b616949c2704a9b
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var activityMainActivity: ActivityMainBinding
