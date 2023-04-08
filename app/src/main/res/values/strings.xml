@@ -18,5 +18,9 @@
     <string name="sunrise">Sunrise</string>
     <string name="sunset">Sunset</string>
 
+    <string name="aboutImage">This Image Show No Connection with user understood</string>
+    <string name="todo">create beauty design </string>
+    <string name="refresh">Refresh</string>
+
 
 </resources>

@@ -1,5 +1,7 @@
 package com.muhsanapps.weatherapp
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -35,7 +37,8 @@ import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
-    // API  CALL URL ::: https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=4e2d2d137d34778b5b616949c2704a9b
+    // First you check this api whether it is running or not!!
+    // API CALL URL ::: https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=4e2d2d137d34778b5b616949c2704a9b
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var activityMainActivity: ActivityMainBinding
@@ -65,6 +68,10 @@ class MainActivity : AppCompatActivity() {
 
             } else false
         }
+
+        activityMainActivity.refreshButton.setOnClickListener {
+            getCurrentLocation()
+        }
     }
 
     private fun getCityWeather(cityName: String) {
@@ -77,6 +84,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ModelClass>, t: Throwable) {
+                // show Error img
+                //activityMainActivity.noConnectionLogo.visibility = View.VISIBLE
                 Toast.makeText(this@MainActivity,"Not a Valid City Name", Toast.LENGTH_SHORT).show()
             }
         })
@@ -108,7 +117,8 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "Null Received", Toast.LENGTH_SHORT).show()
                     } else {
                         // fetch weather here
-                        Toast.makeText(this, "Get Success", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this, "Get Success", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "waiting...", Toast.LENGTH_SHORT).show()
 
                         fetchCurrentLocationWeather(
                             location.latitude.toString(),
@@ -147,7 +157,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ModelClass>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, "ERROR", Toast.LENGTH_SHORT).show()
+                    // show Error img
+                    activityMainActivity.refreshLayout.visibility = View.VISIBLE
+                    //Toast.makeText(this@MainActivity, "ERROR", Toast.LENGTH_SHORT).show()
                 }
 
             })
@@ -155,6 +167,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setDataOnViews(body: ModelClass?) {
 
@@ -390,10 +404,15 @@ class MainActivity : AppCompatActivity() {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 // Granted Start getting the location information
                 Toast.makeText(applicationContext, " Granted", Toast.LENGTH_SHORT).show()
+                // Permission Image Gone
+                activityMainActivity.refreshLayout.visibility = View.GONE
                 getCurrentLocation()
             } else {
-                Toast.makeText(applicationContext, "You Deny the Location", Toast.LENGTH_SHORT)
+//                Toast.makeText(applicationContext, "You Deny the Location", Toast.LENGTH_SHORT)
+                Toast.makeText(applicationContext, "Please turn on location", Toast.LENGTH_SHORT)
                     .show()
+                // Permission Image Show
+                activityMainActivity.refreshLayout.visibility = View.VISIBLE
             }
         }
     }
