@@ -1,6 +1,6 @@
 # Weather App in Kotlin
 
-This is a weather app built using Kotlin programming language. The app uses the OpenWeatherMap API to retrieve weather data for various locations and provides users with up-to-date weather information and forecasts.
+This is a weather app built using Kotlin programming language. The app uses the OpenWeather API to retrieve weather data for various locations and provides users with up-to-date weather information and forecasts.
 
 #  Features
 Current weather information for user's location or any other location of interest
