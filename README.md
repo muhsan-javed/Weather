@@ -4,7 +4,7 @@ This is a weather app built using Kotlin programming language. The app uses the 
 
 #  Features
 Current weather information for user's location or any other location of interest
-7-day forecast with predicted high and low temperatures for each day
+1-day forecast with predicted high and low temperatures for each day
 Detailed information such as humidity, wind speed, and chance of precipitation
 Toggle between different units of measurement (e.g. Celsius and Fahrenheit)
 Location-based weather alerts and push notifications for severe weather conditions
