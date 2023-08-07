@@ -58,10 +58,11 @@ class MainActivity : AppCompatActivity() {
 
                 getCityWeather(activityMainActivity.etGetCityName.text.toString())
                 val view = this.currentFocus
-                if (view!= null){
+                if (view != null) {
 
-                    val imm: InputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(view.windowToken,0)
+                    val imm: InputMethodManager =
+                        getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(view.windowToken, 0)
                     activityMainActivity.etGetCityName.clearFocus()
                 }
                 true
@@ -77,18 +78,20 @@ class MainActivity : AppCompatActivity() {
     private fun getCityWeather(cityName: String) {
 
         activityMainActivity.pdLoading.visibility = View.VISIBLE
-        ApiUtilities.getApiInterface()?.getCityWeatherData(cityName, API_KEY)?.enqueue(object :Callback<ModelClass>{
-            @RequiresApi(Build.VERSION_CODES.O)
-            override fun onResponse(call: Call<ModelClass>, response: Response<ModelClass>) {
-                setDataOnViews(response.body())
-            }
+        ApiUtilities.getApiInterface()?.getCityWeatherData(cityName, API_KEY)
+            ?.enqueue(object : Callback<ModelClass> {
+                @RequiresApi(Build.VERSION_CODES.O)
+                override fun onResponse(call: Call<ModelClass>, response: Response<ModelClass>) {
+                    setDataOnViews(response.body())
+                }
 
-            override fun onFailure(call: Call<ModelClass>, t: Throwable) {
-                // show Error img
-                //activityMainActivity.noConnectionLogo.visibility = View.VISIBLE
-                Toast.makeText(this@MainActivity,"Not a Valid City Name", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onFailure(call: Call<ModelClass>, t: Throwable) {
+                    // show Error img
+                    //activityMainActivity.noConnectionLogo.visibility = View.VISIBLE
+                    Toast.makeText(this@MainActivity, "Not a Valid City Name", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            })
     }
 
     private fun getCurrentLocation() {
@@ -181,7 +184,8 @@ class MainActivity : AppCompatActivity() {
         activityMainActivity.tvDayMinTemp.text =
             "Night " + kelvinToCelsius(body!!.main.temp_min) + "°"
         activityMainActivity.tvTemp.text = "" + kelvinToCelsius(body!!.main.temp) + "°"
-        activityMainActivity.tvFeelsLike.text = "Feels Alike " + kelvinToCelsius(body!!.main.feels_like) + "°"
+        activityMainActivity.tvFeelsLike.text =
+            "Feels Alike " + kelvinToCelsius(body!!.main.feels_like) + "°"
         activityMainActivity.tvWeatherType.text = body.weather[0].main
         activityMainActivity.tvSunrise.text = timeStampToLocalDate(body.sys.sunrise.toLong())
         activityMainActivity.tvSunset.text = timeStampToLocalDate(body.sys.sunset.toLong())

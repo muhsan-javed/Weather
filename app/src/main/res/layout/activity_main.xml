@@ -20,38 +20,37 @@
             android:visibility="gone" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginTop="100dp"
-            android:visibility="gone"
-            android:id="@+id/refreshLayout">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
-                android:src="@drawable/no_internet_connection"
-                android:visibility="visible"
                 android:contentDescription="@string/aboutImage"
-                />
+                android:src="@drawable/no_internet_connection"
+                android:visibility="visible" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/refreshButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="@dimen/padding_large"
                 android:elevation="@dimen/padding_x_large"
                 app:cardCornerRadius="@dimen/padding_large"
                 app:cardElevation="@dimen/padding_x_small"
-                app:cardMaxElevation="@dimen/padding_x_small"
-                android:id="@+id/refreshButton">
+                app:cardMaxElevation="@dimen/padding_x_small">
 
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="@string/refresh"
-                    android:gravity="center"
                     android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="@string/refresh"
                     android:textAllCaps="false"
                     android:textSize="@dimen/text_large"
                     tools:ignore="MissingConstraints" />
