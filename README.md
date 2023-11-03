@@ -2,13 +2,13 @@
 
 This is a weather app built using Kotlin programming language. The app uses the OpenWeather API to retrieve weather data for various locations and provides users with up-to-date weather information and forecasts.
 
-#  Features
-Current weather information for user's location or any other location of interest
-1-day forecast with predicted high and low temperatures for each day
-Detailed information such as humidity, wind speed, and chance of precipitation
-Toggle between different units of measurement (e.g. Celsius and Fahrenheit)
-Location-based weather alerts and push notifications for severe weather conditions
-Additional information such as sunrise and sunset times, moon phase, and UV index.
+#  🔥Features
+- Current weather information for the user's location or any other location of interest
+- 1-day forecast with predicted high and low temperatures for each day
+- Detailed information such as humidity, wind speed, and chance of precipitation
+- Toggle between different units of measurement (e.g. Celsius and Fahrenheit)
+- Location-based weather alerts and push notifications for severe weather conditions
+- Additional information such as sunrise and sunset times, moon phase, and UV index.
 
 # Installation
 To run the app, you will need to obtain an API key from OpenWeatherMap. Once you have the API key, create a new file local.properties in the project root directory and add the following line:
