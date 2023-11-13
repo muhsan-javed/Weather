@@ -15,7 +15,10 @@ To run the app, you will need to obtain an API key from OpenWeatherMap. Once you
 
 OPEN_WEATHER_MAP_API_KEY=<your_api_key_here>
 
-Replace <your_api_key_here> with your actual API key.
+```Replace
+   Replace <your_api_key_here>  with your actual API key.
+```
+
 
 # Dependencies
 The app uses the following dependencies:
