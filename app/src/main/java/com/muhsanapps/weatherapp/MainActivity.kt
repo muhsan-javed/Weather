@@ -22,6 +22,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.littlemango.stacklayoutmanager.StackLayoutManager
 import com.muhsanapps.weatherapp.Models.ModelClass
 import com.muhsanapps.weatherapp.Utilities.ApiUtilities
 import com.muhsanapps.weatherapp.databinding.ActivityMainBinding
