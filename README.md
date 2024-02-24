@@ -7,7 +7,7 @@ This is a weather app built using Kotlin programming language. The app uses the 
 - 1-day forecast with predicted high and low temperatures for each day
 - Detailed information such as humidity, wind speed, and chance of precipitation
 - Toggle between different units of measurement (e.g. Celsius and Fahrenheit)
-- Location-based weather alerts and push notifications for severe weather conditions
+- Location-based weather alerts and push notifications for severe weather conditions {Android 11 12 13}
 - Additional information such as sunrise and sunset times, moon phase, and UV index.
 
 # Installation
